@@ -1,10 +1,10 @@
 openapi: '3.0.2'
 info:
-  title: Salle De Chinema
-  description: Calendrier hebdomadaire projection
-  version: '1.0.0'
+  title: CINEMA
+  description: Calendar
+  version: '1.0'
 servers:
-  - url: https://STD21005.com
+  - url: STD21005
 paths:
   /Film:
     get:
@@ -59,7 +59,7 @@ paths:
         '400':
           description: Bad request
 
-  /Film/{id}:
+  /Film/{Titre}:
     put:
       tags:
         - "Film"
@@ -98,6 +98,12 @@ paths:
         - "Film"
       summary: Change part of a film
       operationId: Change part 
+      parameters:
+        - name: Titre
+          in: path
+          required: true
+          schema:
+            type: string
       requestBody:
         description: Film is update
         content:
@@ -204,7 +210,7 @@ paths:
       tags:
         - "Type"
       summary: Change all information of Type
-      operationId: Change all information
+      operationId: Change all information for a type of the film
       parameters:
         - name: id_type
           in: path
