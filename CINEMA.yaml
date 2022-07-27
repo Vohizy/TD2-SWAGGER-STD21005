@@ -212,7 +212,7 @@ paths:
       summary: Change all information of Type
       operationId: Change all information for a type of the film
       parameters:
-        - name: id_Categorie
+        - name: id_Category
           in: path
           required: true
           schema:
@@ -287,6 +287,8 @@ components:
             type: integer
           Resume:
             type: string
+          Class:
+            type: string
       All_Film:
         type: object
         properties:
@@ -297,7 +299,7 @@ components:
         properties:
           Type:
             type: string
-            example: Serie
+            example: Commedie
       id_Category:
         type: object
         properties:
